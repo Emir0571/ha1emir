@@ -105,9 +105,23 @@ class CalculatorTest {
         String actual = calc.readScreen();
 
         assertEquals(expected, actual);
-
-        // dfdfd
     }
+
+    @Test
+    @DisplayName("should correctly add two numbers")
+    void testAddition(){
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(1);
+        calc.pressBinaryOperationKey("+");
+        calc.pressDigitKey(2);
+        calc.pressEqualsKey();
+
+        String result = calc.readScreen();
+
+        assertEquals("4", result);
+    }
+
 
 }
 
